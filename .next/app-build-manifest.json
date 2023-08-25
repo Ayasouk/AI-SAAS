@@ -12,30 +12,35 @@
       "static/css/app/(dashboard)/layout.css",
       "static/chunks/app/(dashboard)/layout.js"
     ],
-    "/(landing)/page": [
+    "/(dashboard)/(routes)/conversation/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(landing)/page.js"
+      "static/chunks/app/(dashboard)/(routes)/conversation/page.js"
     ],
-    "/(auth)/(routes)/sign-in/[[...sign-in]]/page": [
+    "/(dashboard)/(routes)/image/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(auth)/(routes)/sign-in/[[...sign-in]]/page.js"
+      "static/chunks/app/(dashboard)/(routes)/image/page.js"
     ],
-    "/(auth)/layout": [
+    "/(dashboard)/(routes)/music/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(auth)/layout.js"
+      "static/chunks/app/(dashboard)/(routes)/music/page.js"
+    ],
+    "/(dashboard)/(routes)/video/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/(routes)/video/page.js"
     ],
     "/(dashboard)/(routes)/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboard)/(routes)/dashboard/page.js"
     ],
-    "/(dashboard)/(routes)/conversation/page": [
+    "/(dashboard)/(routes)/code/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/(routes)/conversation/page.js"
+      "static/chunks/app/(dashboard)/(routes)/code/page.js"
     ]
   }
 }
