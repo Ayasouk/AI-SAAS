@@ -5,8 +5,8 @@ import prismadb from "@/lib/prismadb";
 import {stripe} from "@/lib/stripe";
 import {absoluteUrl} from "@/lib/utils";
 
-const settingsUrl = absoluteUrl("settings");
-
+//const settingsUrl = absoluteUrl("settings");
+const settingsUrl = "localhost:3000/settings";
 export async function GET() {
     try {
         const {userId} = auth()
@@ -16,11 +16,13 @@ export async function GET() {
             return new NextResponse("Unauthorized", {status: 401});
         }
 
+        console.log("STRIPE API GET PRISMA");
         const userSubscription = await prismadb.userSubscription.findUnique({
             where: {
                 userId
             }
         });
+        console.log("STRIPE API GET SESSION STRIPE")
 
         if (userSubscription && userSubscription.stripeCustomerId) {
             const stripeSession = await stripe.billingPortal.sessions.create({
@@ -30,6 +32,7 @@ export async function GET() {
 
             return new NextResponse(JSON.stringify({url: stripeSession.url}));
         }
+        console.log("STRIPE API GET CHECKOUT ")
 
         const stripeSession = await stripe.checkout.sessions.create({
             success_url: settingsUrl,
@@ -41,7 +44,7 @@ export async function GET() {
             line_items: [
                 {
                     price_data: {
-                        currency: "USD",
+                        currency: "EUR",
                         product_data: {
                             name: "Genix Pro",
                             description: "Unlimited AI Generations",
@@ -57,8 +60,9 @@ export async function GET() {
             metadata: {
                 userId,
             },
-        })
+        });
 
+        console.log("TEST ", stripeSession);
         return new NextResponse(JSON.stringify({url: stripeSession.url }))
     } catch(error) {
         console.log("[STRIPE_ERROR]", error)
