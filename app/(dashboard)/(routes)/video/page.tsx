@@ -99,7 +99,11 @@ const VideoPage = ()=>{
                     <Empty label="No video generated."/>
                 )}
                 {video && (
+<<<<<<< HEAD
                     <video controls className="w-full aspect-video mt-8 rounded-lg border bg-black" >
+=======
+                    <video controls className="w-full aspect-video mt-8 rounded-lg border bg-black">
+>>>>>>> dev
                         <source src={video}/>
                     </video>
                 )}
