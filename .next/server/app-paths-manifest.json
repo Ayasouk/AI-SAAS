@@ -1,7 +1,1 @@
-{
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(landing)/page": "app/(landing)/page.js",
-  "/api/conversation/route": "app/api/conversation/route.js",
-  "/(dashboard)/(routes)/conversation/page": "app/(dashboard)/(routes)/conversation/page.js",
-  "/(dashboard)/(routes)/dashboard/page": "app/(dashboard)/(routes)/dashboard/page.js"
-}
+{}
